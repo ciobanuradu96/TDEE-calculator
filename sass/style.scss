@@ -19,14 +19,14 @@ body{
     color:$light-color
 }
 
-.slider{
+.container{
     position: relative;
     overflow: hidden;
     height: 100vh;
     width: 100%;
 }
 
-.slide{
+.card{
     position:absolute;
     top:20%;
     left: 20%;
@@ -41,6 +41,8 @@ body{
     align-items: center;
     background-color: $dark-color;
     margin: auto;
+    background-color: #334;
+
     &.current{
          z-index:1; 
     }
@@ -51,31 +53,65 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     margin: auto;
+    padding: 3rem 3rem;
 
-    .age-slide{
+    p{
+        text-align: justify;
+        margin: 1.3rem 0;
+    }
+    h1{
+        margin-bottom:4rem;
+    }
+
+    .template-slide{
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0.5rem 1rem;
 
        p{
-            margin:0rem 1rem;
+            margin:rem 1rem;
             font-size: 1.6rem;
        }
        
     }
-    .weight-slide{
-        @extend .age-slide;
+    .age-slide{
+        @extend .template-slide;
     }
+    .weight-slide{
+        @extend .template-slide;
+    }
+   .gender-slide{
+       @extend .template-slide;
+   }
+   .height-slide{
+       @extend .template-slide;
+   }
+
+   .bodyFat{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+   .activityLvl{
+       display:flex;
+       align-items: center;
+       justify-content: center;
+   }
 }
 
 button{
     position: absolute;
-    top:50%;
-    background-color: red;
+    background-color: white;
+    padding: 0.3rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    border: 0;
     &#next{
-        right:1% ;
+        bottom: 10%;
+        right:10% ;
     }
     &#prev{
         left:1%;
@@ -93,7 +129,8 @@ input
         width: 100%;
     }   
     &[type='number']{
-        width:10%;
+        max-width:45%;
+        min-width:15%;
         color:$light-color;
         background-color: transparent;
         border: 0px;
