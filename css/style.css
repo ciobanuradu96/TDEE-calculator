@@ -23,16 +23,21 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  right: 20%;
-  width: 50%;
-  height: 50%;
-  z-index: -1;
+  width: 30%;
+  height: 80%;
+  z-index: 1;
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
   display: -webkit-box;
@@ -51,10 +56,6 @@ body {
   background-color: #333;
   margin: auto;
   background-color: #334;
-}
-
-.card.current {
-  z-index: 1;
 }
 
 .content {

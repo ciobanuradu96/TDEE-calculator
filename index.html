@@ -12,32 +12,32 @@
 <body>
     <div class="container">
         <div class="card current">
-            <div class="content content-first">
+            <div class="content content-about">
                 <h1>Welcome to my TDEE-calculator</h1>
                 <div class="about">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus ipsum, tempor sit amet lorem sed, aliquet fringilla velit. Nam in fermentum mi, ut blandit libero. Fusce euismod posuere diam vitae malesuada. Quisque ut urna lacus. Etiam nec mi ac neque malesuada interdum. Phasellus rutrum dui eu vehicula egestas. Nam eget maximus nulla. Ut eget elementum lacus. Proin semper lorem quis diam fringilla, a malesuada eros pharetra. Morbi accumsan arcu ipsum, vitae varius eros porttitor in. Aenean commodo eget sem vitae feugiat. </p>    
                 </div>
-                <div class="gender-slide">
-                   <p>  Male</p>
-                    <input type="range" min="1" max="2" value="1" name="genderSlide" id="genderSlide">
-                   <p>  Female</p>
-                </div>
-                <div class="age-slide">
-                    <p>Age</p>
-                    <input type="range" min="1" max="100" value="80" step='1' id="ageSlide" class="ageSlide">
-                    <input type="number" id="ageValue" class="ageSlide">
-                </div>
-
+                
               
                 <button id="next">Next</button>
             </div>
         </div>
         <div class="card ">
-            <div class="content">
-                <h1>Slide 2</h1>
+            <div class="content content-inputs">
+                <div class="gender-slide">
+                    <p>  Male</p>
+                     <input type="range" min="1" max="2" value="1" name="genderSlide" id="genderSlide">
+                    <p>  Female</p>
+                 </div>
+                 <div class="age-slide">
+                     <p>Age</p>
+                     <input type="range" min="1" max="100" value="80" step='1' id="ageSlide" class="ageSlide">
+                     <input type="number" id="ageValue"  class="ageSlide">
+                 </div>
+ 
                 <div class="weight-slide">
                     <p>Weight</p>
-                    <input type="range" min="1" max="200" value="80" step='1' id="weightSlide" class="weightSlide">
+                    <input type="range" min="1" max="200" value="0" step='1' id="weightSlide" class="weightSlide">
                     <input type="number" id="weightValue" class="weightSlide">
                 </div>
                 <div class="height-slide">
@@ -45,31 +45,35 @@
                     <input type="range" min="1" max="200" value="80" step='1' id="heightSlide" class="heightSlide">
                     <input type="number" id="heightValue" class="heightSlide">
                 </div>
+                <div class="activityLvl"> 
+                    <p>Activity Level</p>
+                    <select name="" id="activityLvl">
+                        <option value="sedentary"
+                        >Sedentary</option>
+                        <option value="light"
+                        >Light Exercise</option>
+                        <option value="moderate"
+                        >Moderate Exercis</option>
+                        <option value="heavy"
+                        >Heavy Exercis</option>
+                        <option value="athelete"
+                        >Athlete </option>
+                    </select>
+                </div>
+                <div class="bodyFat"> 
+                    
+                    <input type="number" placeholder="Body Fat % (optional)" class="bodyFat" id="bodyFat">
+                </div>
                 <button id="next">Next</button>
             </div>
         </div>
         <div class="card ">
             <div class="content content-third">
-                <h1>Slide 3</h1>
-                <div class="activityLvl"> 
-                    <p>Activity Level</p>
-                    <select name="" id="">
-                        <option value="0
-                        ">Sedentary</option>
-                        <option value="1
-                        ">Light Exercise</option>
-                        <option value="2
-                        ">Moderate Exercis</option>
-                        <option value="3
-                        ">Heavy Exercis</option>
-                        <option value="4
-                        ">Athlete </option>
-                    </select>
-                </div>
-                <div class="bodyFat"> 
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus ipsum, tempor sit amet lorem sed, </p>
-                    <input type="number" id="bodyFatValue" placeholder="Body Fat % (optional)" class="bodyFat">
-                </div>
+                <h1>Results</h1>
+                BMI <span id="bmi"></span>
+                BMR <span id="bmr"></span>
+                TDEE <span id="tdee"></span>
+                
             </div>
         </div>
     </div>
