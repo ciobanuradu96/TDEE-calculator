@@ -6,79 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TDEE-calculator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="card current">
+        <div class="navbar">
+            <ul>
+                <li><i class="fas fa-h-square" id="home"></i></i></li>
+                <li><i class="fas fa-calculator" id="calculator"></i></li>
+                <li><i class="fas fa-poll" id="results"></i></li>
+            </ul>
+        </div>
+        <div class="card current" id="home">
             <div class="content content-about">
                 <h1>Welcome to my TDEE-calculator</h1>
                 <div class="about">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus ipsum, tempor sit amet lorem sed, aliquet fringilla velit. Nam in fermentum mi, ut blandit libero. Fusce euismod posuere diam vitae malesuada. Quisque ut urna lacus. Etiam nec mi ac neque malesuada interdum. Phasellus rutrum dui eu vehicula egestas. Nam eget maximus nulla. Ut eget elementum lacus. Proin semper lorem quis diam fringilla, a malesuada eros pharetra. Morbi accumsan arcu ipsum, vitae varius eros porttitor in. Aenean commodo eget sem vitae feugiat. </p>    
+                    <p>This application is a simple TDEE calculator that uses information such as weight, height, age,
+                        and other factors to calculate various health indicators. The page was created with only vanilla
+                        JavaScript and no framework, and all of the inputs and results are reactive and measured without
+                        the need to reload the page. </p>
                 </div>
-                
-              
-                <button id="next">Next</button>
             </div>
         </div>
-        <div class="card ">
+        <div class="card " id="calculator">
             <div class="content content-inputs">
                 <div class="gender-slide">
-                    <p>  Male</p>
-                     <input type="range" min="1" max="2" value="1" name="genderSlide" id="genderSlide">
-                    <p>  Female</p>
-                 </div>
-                 <div class="age-slide">
-                     <p>Age</p>
-                     <input type="range" min="1" max="100" value="80" step='1' id="ageSlide" class="ageSlide">
-                     <input type="number" id="ageValue"  class="ageSlide">
-                 </div>
- 
+                    <p> Male</p>
+                    <input type="range" min="1" max="2" value="1" name="genderSlide" id="genderSlide">
+                    <p> Female</p>
+                </div>
+                <div class="age-slide">
+                    <p>Age</p>
+                    <input type="range" min="1" max="100" value="20" step='1' id="ageSlide" class="ageSlide">
+                    <input type="number" id="ageValue" class="ageSlide">
+                </div>
+
                 <div class="weight-slide">
                     <p>Weight</p>
-                    <input type="range" min="1" max="200" value="0" step='1' id="weightSlide" class="weightSlide">
+                    <input type="range" min="0" max="200" value="70" step='1' id="weightSlide" class="weightSlide">
                     <input type="number" id="weightValue" class="weightSlide">
+                    <p>Kg</p>
                 </div>
                 <div class="height-slide">
                     <p>Height</p>
-                    <input type="range" min="1" max="200" value="80" step='1' id="heightSlide" class="heightSlide">
+                    <input type="range" min="1" max="200" value="170" step='1' id="heightSlide" class="heightSlide">
                     <input type="number" id="heightValue" class="heightSlide">
+                    <p>cm</p>
                 </div>
-                <div class="activityLvl"> 
+                <div class="activityLvl">
                     <p>Activity Level</p>
                     <select name="" id="activityLvl">
-                        <option value="sedentary"
-                        >Sedentary</option>
-                        <option value="light"
-                        >Light Exercise</option>
-                        <option value="moderate"
-                        >Moderate Exercis</option>
-                        <option value="heavy"
-                        >Heavy Exercis</option>
-                        <option value="athelete"
-                        >Athlete </option>
+                        <option value="sedentary">Sedentary</option>
+                        <option value="light">Light Exercise</option>
+                        <option value="moderate">Moderate Exercis</option>
+                        <option value="heavy">Heavy Exercis</option>
+                        <option value="athelete">Athlete </option>
                     </select>
                 </div>
-                <div class="bodyFat"> 
-                    
+                <div class="bodyFat">
+
                     <input type="number" placeholder="Body Fat % (optional)" class="bodyFat" id="bodyFat">
                 </div>
-                <button id="next">Next</button>
+
             </div>
         </div>
-        <div class="card ">
-            <div class="content content-third">
-                <h1>Results</h1>
-                BMI <span id="bmi"></span>
-                BMR <span id="bmr"></span>
-                TDEE <span id="tdee"></span>
-                
+        <div class="card " id="results">
+            <div class="content content-results">
+                <h1>Your'e results</h1>
+
+                <h2> Your'e BMI Score is: <span id="bmi"></span> clasified as <span id="bmiStatus"></span></h2>
+                <p>BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is
+                    intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a
+                    healthy body weight for their height. Specifically, the value obtained from the calculation of BMI
+                    is used to categorize whether a person is underweight, normal weight, overweight, or obese depending
+                    on what range the value falls between.</p>
+                <h2> Your'e Basal Metabolic Rate is: <span id="bmr"></span> Kcal</h2>
+                <p>The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate
+                    environment when the digestive system is inactive. It is the equivalent of figuring out how much gas
+                    an idle car consumes while parked. In such a state, energy will be used only to maintain vital
+                    organs, which include the heart, lungs, kidneys, nervous system, intestines, liver, lungs, sex
+                    organs, muscles, and skin.</p>
+                <h2> Your Maintenance Calories are: <span id="tdee"></span> Kcal</h2>
+                <p>Maintenance calories are the total amount of calories required on a daily basis to maintain your
+                    body
+                    weight with no gains or losses in fat and/or muscle tissue according to your activity level</p>
             </div>
         </div>
     </div>
-    
-  
+
+
     <script src="main.js"></script>
 </body>
 

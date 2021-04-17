@@ -29,32 +29,49 @@ body{
     justify-content: center;
     align-items: center;
 }
-
-.card{
-   
-    
-    
-    width: 30%;
-    height: 80%;
-    z-index: 1;
-    transition: opacity 0.4s ease-in-out;
+.navbar{
+    background-color: #334;
+    height:80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    
+    margin-right: 1rem;
+    ul {
+        margin-top: 5rem;
+        list-style-type: none;
+    }
+    i{
+        font-size: 3rem;
+        padding: 1.4rem 1rem;
+        cursor: pointer;
+       
+    }
+    i:hover{
+        transform: translate(2px);
+    }
+}
+.card{
+    width: 40%;
+    height: 80%;
+    transition: opacity 1s ease-in-out;
+    display: flex;
     background-color: $dark-color;
-    margin: auto;
+   
     background-color: #334;
+    display: none;
+    opacity: 0;
 
-    // &.current{
-    //      z-index:1; 
-    // }
+    &.current{
+       display:initial; 
+       opacity: 1;
+    }
 }
 
 .content{
     display: flex;
     flex-direction: column;
-    align-items: center;
+   
     justify-content: center;
     margin: auto;
     padding: 3rem 3rem;
@@ -66,16 +83,29 @@ body{
     h1{
         margin-bottom:4rem;
     }
+    &.content-results{
 
+        h2{
+            background-color: $dark-color;
+            padding: 1rem 1.5rem;
+            width: 100%;
+        }
+        p{
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+        }
+        
+    }
     .template-slide{
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0.5rem 1rem;
-
+        ;
        p{
-            margin:rem 1rem;
-            font-size: 1.6rem;
+           
+            margin:0rem 1rem;
+            font-size: 2rem;
        }
        
     }
@@ -99,28 +129,27 @@ body{
        justify-content: center;
    }
    .activityLvl{
-       display:flex;
-       align-items: center;
-       justify-content: center;
+       @extend .template-slide;
+      
    }
 }
 
-button{
-    position: absolute;
-    background-color: white;
-    padding: 0.3rem 1rem;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    border: 0;
-    &#next{
-        bottom: 10%;
-        right:10% ;
-    }
-    &#prev{
-        left:1%;
-    }
+// button{
+//     position: absolute;
+//     background-color: white;
+//     padding: 0.3rem 1rem;
+//     font-size: 1.2rem;
+//     border-radius: 30px;
+//     border: 0;
+//     &#next{
+//         bottom: 10%;
+//         right:10% ;
+//     }
+//     &#prev{
+//         left:1%;
+//     }
 
-}
+// }
 
 input
 {
@@ -132,13 +161,20 @@ input
         width: 100%;
     }   
     &[type='number']{
-        max-width:45%;
-        min-width:15%;
+        text-align: center;
+        max-width:3ch;
+        min-width:1ch;
         color:$light-color;
         background-color: transparent;
         border: 0px;
-        border-bottom:2px solid $dark-color  ;
-        margin: 1rem 1rem;
+        border-bottom:2px solid $light-color  ;
+        margin: 1rem 1.2rem;
         font-size: 1.5rem;
+
+        &.bodyFat{
+            min-width: none;
+            max-width: 80%;
+        }
     }
 }
+  
